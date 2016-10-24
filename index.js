@@ -53,6 +53,7 @@ module.exports = function (processors, options) {
       var warnings = result.warnings().join('\n')
 
       file.contents = new Buffer(result.css)
+      file.postcssPlugins = result.processor.plugins
 
       // Apply source map to the chain
       if (file.sourceMap) {
